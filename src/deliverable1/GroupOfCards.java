@@ -36,7 +36,7 @@ public class GroupOfCards extends Card
     
     public void shuffle()
     {
-        Collections.shuffle(cards);
+        
     }
 
     /**
