@@ -6,7 +6,6 @@
 package deliverable1;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * A concrete class that represents any grouping of cards for a Game.
@@ -14,7 +13,7 @@ import java.util.Collections;
  * The group of cards has a maximum size attribute which is flexible for reuse.
  * @author dancye
  */
-public class GroupOfCards 
+public class GroupOfCards extends Card
 {
    
     //The group of cards, stored in an ArrayList
@@ -52,6 +51,11 @@ public class GroupOfCards
      */
     public void setSize(int givenSize) {
         size = givenSize;
+    }
+
+    @Override
+    public String toString() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }//end class
