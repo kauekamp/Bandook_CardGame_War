@@ -9,6 +9,18 @@ package deliverable1;
  *
  * @author ekamp
  */
+
+import java.util.Scanner;
 public class Main {
     
+    
+    public static void main(String[] args){
+    GroupOfCards obj = new GroupOfCards();
+    Gamer gamer = new Gamer();
+    Scanner inp = new Scanner(System.in);
+    obj.prompt1();
+    obj.shuffle();
+    obj.prompt2();
+    obj.separate();
+    }
 }

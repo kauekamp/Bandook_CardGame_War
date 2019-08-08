@@ -6,6 +6,7 @@
 package deliverable1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A concrete class that represents any grouping of cards for a Game.
@@ -17,45 +18,95 @@ public class GroupOfCards extends Card
 {
    
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
-    private int size;//the size of the grouping
-    
-    public GroupOfCards(int givenSize)
+    public ArrayList<String> cards;
+    //private int size;//the size of the grouping
+    private Pattern pattern = new Pattern();
+    private int position=0;
+    private String SUITS;
+    private String VALUES;
+    public String SARR[]= {"SPADE","CLUB","HEART","DIAMOND"};
+    public String VARR[]={"TWO","THREE","FOUR","FIVE","SIX","SEVEN","EIGHT","NINE","TEN","JACK","QUEEN","KING","ACE"};
+                    
+    public GroupOfCards()
     {
-        size = givenSize;
+
     }
     
+    public GroupOfCards(String SARR,String VARR)
+    {
+        this.SUITS=SARR;
+     this.VALUES= VARR;
+     
+    }
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
+    public ArrayList<String> showCards()
     {
         return cards;
     }
     
     public void shuffle()
     {
-        
-    }
-
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
-
-    /**
-     * @param givenSize the max size for the group of cards
-     */
-    public void setSize(int givenSize) {
-        size = givenSize;
-    }
-
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Collections.shuffle(cards);
     }
     
-}//end class
+    public void prompt1(){
+        cards = new ArrayList<>();
+        for(int i=0; i<4; i++){
+            for(int j=0; j<13; j++){
+            cards.add(VARR[j]+ " of " + SARR[i]);   
+            }
+        }
+            
+    }
+    
+    @Override
+    public String toString(){
+    return "It is valid!";
+    }
+    
+    public void prompt2(){
+    for(int i=0; i<52; i++){
+        System.out.println(cards.get(i));
+    }
+    }
+    
+    public void separate(){
+    ArrayList<String> deckF = new ArrayList<>();
+    ArrayList<String> deckS = new ArrayList<>();
+    int a =0;
+    int b =1;
+    for(int c=0; c<52; c++){
+        if(c%2==0){
+        deckF.add(cards.get(a));
+        a+=2;
+        }
+        else{
+            deckS.add(cards.get(b));
+            b+=2;
+        }
+    }
+    
+    Gamer gamer = pattern.generateGamer(); 
+    gamer.play(deckF,deckS);
+    }
+    
+    public String editC(ArrayList<String> cards){
+        String ec = cards.get(cards.size()-1);
+        cards.remove(cards.size()-1);
+        return ec;
+    }
+}//end of the GroupOfCards class
+
+   
+            
+            
+            
+            
+            
+            
+            
+            
+   

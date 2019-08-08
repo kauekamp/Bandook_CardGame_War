@@ -10,6 +10,12 @@ package deliverable1;
  * @author dancye, 2018
  */
 public abstract class Player{
+    public Player(){
+        
+    }
+    public abstract void play();
+    
+    
     private String playerID; //the unique ID for this player
     
     /**
@@ -41,6 +47,5 @@ public abstract class Player{
      * The method to be instantiated when you subclass the Player class
      * with your specific type of Player and filled in with logic to play your game.
      */
-    public abstract void play();
-    
+
 }
