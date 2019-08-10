@@ -77,6 +77,33 @@ public class GroupOfCardsTest {
         //fail("The test case is a prototype.");
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * Test of shuffle method, of class GroupOfCards.
      */
